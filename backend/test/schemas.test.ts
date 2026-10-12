@@ -49,7 +49,7 @@ describe("esquemas compartidos", () => {
       version: "m-1",
       minecraft: "1.21.1",
       loader: "fabric",
-      loaderVersion: "0.16.5",
+      loaderVersion: "0.19.5",
       serverId: "endersafio",
       mods: [],
       issuedAt: new Date().toISOString(),

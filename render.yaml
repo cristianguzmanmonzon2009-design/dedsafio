@@ -47,7 +47,7 @@ services:
       - key: MINECRAFT_VERSION
         value: "1.21.1"
       - key: FABRIC_LOADER_VERSION
-        value: "0.16.5"
+        value: "0.19.5"
       - key: REQUIRED_JAVA_MAJOR
         value: "21"
 

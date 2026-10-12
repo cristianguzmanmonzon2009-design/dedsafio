@@ -12,7 +12,7 @@ export const TARGET_MINECRAFT = "1.21.1" as const;
  * Fabric Loader por defecto. Es configurable por entorno en el backend y
  * puede sobreescribirse desde el manifiesto publicado.
  */
-export const DEFAULT_FABRIC_LOADER = "0.16.5" as const;
+export const DEFAULT_FABRIC_LOADER = "0.19.5" as const;
 
 /** Java requerido por Minecraft 1.21.1. */
 export const REQUIRED_JAVA_MAJOR = 21 as const;

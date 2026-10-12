@@ -42,7 +42,7 @@ const envSchema = z.object({
   SERVER_HOST: z.string().min(1).default("127.0.0.1"),
   SERVER_PORT: z.coerce.number().int().positive().default(25565),
   MINECRAFT_VERSION: z.string().min(1).default("1.21.1"),
-  FABRIC_LOADER_VERSION: z.string().min(1).default("0.16.5"),
+  FABRIC_LOADER_VERSION: z.string().min(1).default("0.19.5"),
   REQUIRED_JAVA_MAJOR: z.coerce.number().int().positive().default(21),
 
   MOD_STORAGE_DIR: z.string().default("./storage"),
