@@ -1,25 +1,33 @@
 use std::collections::HashSet;
 
-use crate::api_types::{Manifest, ModEntry};
-use crate::error::{AppError, AppResult};
+use serde::Deserialize;
+
+use crate::api_types::{DownloadTicket, Manifest, ModEntry};
+use crate::error::AppResult;
 use crate::game::net::{download_file, sha256_file, HashAlgo};
 use crate::game::paths::Paths;
+use crate::state::AppState;
 
-fn ticket_for(mod_id: &str, tickets: &[crate::api_types::DownloadTicket]) -> Option<String> {
-    tickets
-        .iter()
-        .find(|t| t.mod_id == mod_id)
-        .map(|t| t.url.clone())
+#[derive(Debug, Deserialize)]
+struct TicketResponse {
+    ticket: DownloadTicket,
+}
+
+/// Pide un ticket de descarga fresco (vida corta) para un mod concreto, justo
+/// antes de descargarlo. Evita que un ticket caduque durante la instalación
+/// (Java/Minecraft/Fabric tardan y el manifiesto se pide antes).
+async fn fresh_ticket(st: &AppState, entry: &ModEntry) -> AppResult<DownloadTicket> {
+    let body = serde_json::json!({ "modId": entry.id, "version": entry.version });
+    let res: TicketResponse = st.post_authed("/api/v1/mods/ticket", &body).await?;
+    Ok(res.ticket)
 }
 
 /// Sincroniza la carpeta `mods/` con el manifiesto: descarga/actualiza los mods
 /// autorizados y elimina cualquier jar no gestionado.
 pub async fn sync_mods<F>(
-    client: &reqwest::Client,
-    base_url: &str,
+    st: &AppState,
     paths: &Paths,
     manifest: &Manifest,
-    tickets: &[crate::api_types::DownloadTicket],
     mut on_phase: F,
 ) -> AppResult<()>
 where
@@ -43,14 +51,9 @@ where
                 continue;
             }
         }
-        let Some(rel) = ticket_for(&entry.id, tickets) else {
-            return Err(AppError::msg(format!(
-                "Falta ticket de descarga para {}",
-                entry.id
-            )));
-        };
-        let url = format!("{base_url}{rel}");
-        download_mod(client, &url, &dest, entry).await?;
+        let ticket = fresh_ticket(st, entry).await?;
+        let url = format!("{}{}", st.base_url, ticket.url);
+        download_mod(&st.client, &url, &dest, entry).await?;
         done += 1;
         on_phase(done, Some(total));
     }
@@ -77,15 +80,13 @@ async fn download_mod(
 
 async fn remove_unmanaged(mods_dir: &std::path::Path, keep: &HashSet<String>) -> AppResult<()> {
     let mut read = tokio::fs::read_dir(mods_dir).await?;
-    while let Some(item) = read.next_entry().await? {
-        let name = item.file_name().to_string_lossy().to_string();
-        if name.starts_with('.') {
-            continue;
-        }
-        if !keep.contains(&name) {
-            let path = item.path();
+    while let Some(entry) = read.next_entry().await? {
+        let name = entry.file_name();
+        let name = name.to_string_lossy();
+        if !keep.contains(name.as_ref()) {
+            let path = entry.path();
             if path.is_file() {
-                tokio::fs::remove_file(&path).await.ok();
+                tokio::fs::remove_file(&path).await?;
             }
         }
     }

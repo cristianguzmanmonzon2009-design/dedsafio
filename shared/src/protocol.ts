@@ -38,7 +38,7 @@ export const TOKEN_TTL = {
   /** Token temporal de licencia que viaja al mod. */
   license: 60 * 10,
   /** Vida de una URL firmada de descarga. */
-  downloadUrl: 60,
+  downloadUrl: 60 * 5,
 } as const;
 
 /** Cabeceras HTTP propias del protocolo. */

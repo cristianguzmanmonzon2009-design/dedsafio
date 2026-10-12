@@ -373,14 +373,9 @@ async fn play_inner(st: &SharedState, app: &AppHandle, settings: &LauncherSettin
 
     // 6) Mods.
     let mut mods_phase = Phase::new(app, "mods", "Descargando mods privados…", 0.60, 0.30);
-    modsync::sync_mods(
-        &st.client,
-        &st.base_url,
-        &paths,
-        &manifest.manifest,
-        &manifest.tickets,
-        |d, t| mods_phase.tick(d, t),
-    )
+    modsync::sync_mods(st.as_ref(), &paths, &manifest.manifest, |d, t| {
+        mods_phase.tick(d, t)
+    })
     .await?;
 
     // 7) Licencia (el mod la revalida en el handshake).
