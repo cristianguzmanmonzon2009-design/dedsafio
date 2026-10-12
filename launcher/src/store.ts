@@ -75,18 +75,31 @@ export const useStore = create<State>((set, get) => ({
   error: null,
 
   async bootstrap() {
-    try {
-      const [config, settings, user] = await Promise.all([
-        api.getConfig(),
-        api.getSettings(),
-        api.me(),
-      ]);
-      set({ config, settings, user, screen: user ? "home" : "login" });
-      void get().refreshStatus();
-      void get().refreshNews();
-    } catch (err) {
-      set({ screen: "login", error: friendlyError(err) });
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    let config: LauncherConfig | null = null;
+    for (let i = 0; i < 20; i++) {
+      try {
+        config = await api.getConfig();
+        break;
+      } catch {
+        if (i === 4)
+          set({
+            error:
+              "Despertando el servidor… puede tardar hasta un minuto la primera vez.",
+          });
+        await sleep(3000);
+      }
     }
+    const settings = await api.getSettings().catch(() => null);
+    const user = await api.me().catch(() => null);
+    set({ config, settings, user, screen: user ? "home" : "login" });
+    if (!config) {
+      set({ error: "No se pudo conectar con el servidor. Revisá tu conexión." });
+      return;
+    }
+    set({ error: null });
+    void get().refreshStatus();
+    void get().refreshNews();
   },
 
   async login(username, password) {
