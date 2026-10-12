@@ -28,5 +28,5 @@ ENV NODE_ENV=production
 WORKDIR /app/backend
 EXPOSE 8080
 
-# Aplica migraciones pendientes y arranca.
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/server.js"]
+# Aplica migraciones, siembra (admin + catálogo) y arranca.
+CMD ["sh", "-c", "npx prisma migrate deploy && npx tsx prisma/seed.ts && node dist/server.js"]

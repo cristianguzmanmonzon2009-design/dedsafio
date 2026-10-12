@@ -1,10 +1,56 @@
 import { PrismaClient } from "@prisma/client";
 import { hash as argonHash } from "@node-rs/argon2";
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { env } from "../src/env.js";
 
 const prisma = new PrismaClient();
+const here = path.dirname(fileURLToPath(import.meta.url));
 
-async function main(): Promise<void> {
+/** Importa el catálogo (mods/manifiestos) si la base aún no tiene mods. */
+async function importCatalog(): Promise<void> {
+  const count = await prisma.modVersion.count();
+  if (count > 0) {
+    console.log(`Catálogo ya presente (${count} versiones de mod).`);
+    return;
+  }
+  const file = path.join(here, "catalog.json");
+  try {
+    await fs.access(file);
+  } catch {
+    console.warn("catalog.json no encontrado: se omite la importación.");
+    return;
+  }
+  const data = JSON.parse(await fs.readFile(file, "utf8")) as {
+    mods?: unknown[];
+    manifest?: unknown[];
+    news?: unknown[];
+  };
+  if (data.mods?.length) {
+    await prisma.modVersion.createMany({
+      data: data.mods as never,
+      skipDuplicates: true,
+    });
+  }
+  if (data.manifest?.length) {
+    await prisma.manifest.createMany({
+      data: data.manifest as never,
+      skipDuplicates: true,
+    });
+  }
+  if (data.news?.length) {
+    await prisma.news.createMany({
+      data: data.news as never,
+      skipDuplicates: true,
+    });
+  }
+  console.log(
+    `Catálogo importado: mods=${data.mods?.length ?? 0} manifest=${data.manifest?.length ?? 0}`,
+  );
+}
+
+async function ensureAdmin(): Promise<void> {
   if (!env.SEED_ADMIN_PASSWORD) {
     console.warn(
       "SEED_ADMIN_PASSWORD vacío: no se crearán administradores.",
@@ -29,6 +75,11 @@ async function main(): Promise<void> {
     },
   });
   console.log(`Administrador listo: ${admin.username} (${admin.id})`);
+}
+
+async function main(): Promise<void> {
+  await importCatalog();
+  await ensureAdmin();
 }
 
 main()

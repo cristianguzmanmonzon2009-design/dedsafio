@@ -1,0 +1,725 @@
+{
+  "mods": [
+    {
+      "id": "cmv4bzyoj0000tt3g6pexbhzg",
+      "modId": "architectury-13-0-11-fabric",
+      "version": "1.0.0",
+      "sha256": "ab17d5c7d8d8c93cc713437ed426f0ff0d6f802a48fff0c579a9bd3aaa833efd",
+      "size": 600921,
+      "required": true,
+      "fileName": "architectury-13.0.11-fabric.jar",
+      "servers": [],
+      "storagePath": "architectury-13-0-11-fabric-1.0.0.enc",
+      "iv": "P8YwDmeW2MdELoKa",
+      "authTag": "j6ug70Cc3eotrgDZKNC3cw==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:40.915Z"
+    },
+    {
+      "id": "cmv4bzyp80001tt3gtv0wfrh7",
+      "modId": "conditionsmod-1-0-3",
+      "version": "1.0.0",
+      "sha256": "8106f963905e4a236bfe0037ab514b536c06506d61217565d1e6004a6c1221da",
+      "size": 617386,
+      "required": true,
+      "fileName": "conditionsmod-1.0.3.jar",
+      "servers": [],
+      "storagePath": "conditionsmod-1-0-3-1.0.0.enc",
+      "iv": "3c3MUXYyOIsRC7en",
+      "authTag": "yROxDdPOMXwdnlw2B47ekg==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:40.941Z"
+    },
+    {
+      "id": "cmv4bzypr0002tt3g2m58mez1",
+      "modId": "creeperoverhaul-fabric-1-21-1-4-0-6",
+      "version": "1.0.0",
+      "sha256": "45ea8ca85ea5926484347de7289ceeeff3e79c6f16b4b04f98ffebf2e484b5a6",
+      "size": 1180412,
+      "required": true,
+      "fileName": "CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+      "servers": [],
+      "storagePath": "creeperoverhaul-fabric-1-21-1-4-0-6-1.0.0.enc",
+      "iv": "JmjgTLsurcdMNC4z",
+      "authTag": "ttQFOATtNdjZscqRNyFUFA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:40.959Z"
+    },
+    {
+      "id": "cmv4bzyqm0003tt3gf8fuuam3",
+      "modId": "customplayermodels-fabric-1-21-0-6-27a",
+      "version": "1.0.0",
+      "sha256": "d6544dfc5b04809a7cc83e2eb71e463bb7be2846a3207a5f0627b47653046a94",
+      "size": 2845602,
+      "required": true,
+      "fileName": "CustomPlayerModels-Fabric-1.21-0.6.27a.jar",
+      "servers": [],
+      "storagePath": "customplayermodels-fabric-1-21-0-6-27a-1.0.0.enc",
+      "iv": "CpMaxuGUUNq4GaY4",
+      "authTag": "/kZfR+lm57nvPnwG9PGVGQ==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:40.991Z"
+    },
+    {
+      "id": "cmv4c006b0004tt3gtpnufvbl",
+      "modId": "dedsafio4",
+      "version": "1.0.0",
+      "sha256": "da2054bd440b267ee76b31a0946b6232b891ce75c4d9d33f63c6dd0ae1233a87",
+      "size": 167689005,
+      "required": true,
+      "fileName": "DEDSAFIO4.jar",
+      "servers": [],
+      "storagePath": "dedsafio4-1.0.0.enc",
+      "iv": "DXNrCgBK/8N3bMsl",
+      "authTag": "ht6lbv3ITYAHxTwjeSaXhA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.851Z"
+    },
+    {
+      "id": "cmv4c007b0005tt3gf4onkkf4",
+      "modId": "fabric-api-0-116-17-1-21-1",
+      "version": "1.0.0",
+      "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800",
+      "size": 2452735,
+      "required": true,
+      "fileName": "fabric-api-0.116.17+1.21.1.jar",
+      "servers": [],
+      "storagePath": "fabric-api-0-116-17-1-21-1-1.0.0.enc",
+      "iv": "eHU9gI/N1tgBMk3a",
+      "authTag": "UGWJXlmjPZ+VzwreNKP6Fg==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.887Z"
+    },
+    {
+      "id": "cmv4c007x0006tt3gw412e7mv",
+      "modId": "ftb-library-fabric-2101-1-37",
+      "version": "1.0.0",
+      "sha256": "399e62acd6c343dab0780ac34aa0e86b4acaa6861eb5d65e826adb03ce9ec6c1",
+      "size": 1435726,
+      "required": true,
+      "fileName": "ftb-library-fabric-2101.1.37.jar",
+      "servers": [],
+      "storagePath": "ftb-library-fabric-2101-1-37-1.0.0.enc",
+      "iv": "IarP2V8WjHf9J7EZ",
+      "authTag": "yasJTommxsKjfw8PE66SsA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.909Z"
+    },
+    {
+      "id": "cmv4c008w0007tt3gj8t82xx8",
+      "modId": "ftb-quests-fabric-2101-1-36",
+      "version": "1.0.0",
+      "sha256": "68df590b681255e11c52d1850d0dd02d3ad9a3c5d82fdb9e37312111a60ddefb",
+      "size": 1607225,
+      "required": true,
+      "fileName": "ftb-quests-fabric-2101.1.36.jar",
+      "servers": [],
+      "storagePath": "ftb-quests-fabric-2101-1-36-1.0.0.enc",
+      "iv": "7DQ/n+ba5dcPtaBD",
+      "authTag": "Aaapgro047h/AkzqZysQ+g==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.944Z"
+    },
+    {
+      "id": "cmv4c00970008tt3gjmi7pk9l",
+      "modId": "ftb-teams-fabric-2101-1-11",
+      "version": "1.0.0",
+      "sha256": "39e34b438e0232a614a8cf1269fcff2705b85fde8b930a03d558bc66a03c7cf6",
+      "size": 303801,
+      "required": true,
+      "fileName": "ftb-teams-fabric-2101.1.11.jar",
+      "servers": [],
+      "storagePath": "ftb-teams-fabric-2101-1-11-1.0.0.enc",
+      "iv": "Cy9tw9f8pXbKdejW",
+      "authTag": "B0yIm3wnej84mc2s/ttEcw==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.956Z"
+    },
+    {
+      "id": "cmv4c009p0009tt3g6dgcavda",
+      "modId": "geckolib-fabric-1-21-1-4-9-3",
+      "version": "1.0.0",
+      "sha256": "70186c70660e8de6c58f5b28625f71ae9e80eb0ad81b5d47b62fd5809bef2ee0",
+      "size": 664463,
+      "required": true,
+      "fileName": "geckolib-fabric-1.21.1-4.9.3.jar",
+      "servers": [],
+      "storagePath": "geckolib-fabric-1-21-1-4-9-3-1.0.0.enc",
+      "iv": "jh7eMsyYKBjV6GTr",
+      "authTag": "81T6CyoLd1X+A/hiqahDxg==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.973Z"
+    },
+    {
+      "id": "cmv4c009v000att3gzu28xe4y",
+      "modId": "jauml-fabric-1-21-1-2-3-1",
+      "version": "1.0.0",
+      "sha256": "2693c1cac6ebda97e1650e36646cdc016985e3349412e40c7c12be3a161d1b23",
+      "size": 46799,
+      "required": true,
+      "fileName": "jauml-fabric-1.21.1-2.3.1.jar",
+      "servers": [],
+      "storagePath": "jauml-fabric-1-21-1-2-3-1-1.0.0.enc",
+      "iv": "IrAuB2vZFEphXfY8",
+      "authTag": "iMF4Y1VO7AbEgnrOxgmzSA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.980Z"
+    },
+    {
+      "id": "cmv4c00a8000btt3gvgven5jm",
+      "modId": "krypton-0-2-8",
+      "version": "1.0.0",
+      "sha256": "94f195819b24e5da64effdc9da15cdd84836cc75e8ff0fd098bab6bc2f49e3fe",
+      "size": 161045,
+      "required": true,
+      "fileName": "krypton-0.2.8.jar",
+      "servers": [],
+      "storagePath": "krypton-0-2-8-1.0.0.enc",
+      "iv": "nojsVnnOi613mbR5",
+      "authTag": "JnQfo5LNgN0E3pFNlMLGPA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:42.992Z"
+    },
+    {
+      "id": "cmv4c00au000ctt3g6z5e6i6d",
+      "modId": "lithium-fabric-0-15-4-mc1-21-1",
+      "version": "1.0.0",
+      "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa",
+      "size": 797454,
+      "required": true,
+      "fileName": "lithium-fabric-0.15.4+mc1.21.1.jar",
+      "servers": [],
+      "storagePath": "lithium-fabric-0-15-4-mc1-21-1-1.0.0.enc",
+      "iv": "++Jeie5annyNsMy0",
+      "authTag": "S1zXvWfF7YCGF4py1IgEfA==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.014Z"
+    },
+    {
+      "id": "cmv4c00bp000dtt3gme9hyyzm",
+      "modId": "mcw-furniture-3-4-1-mc1-21-1fabric",
+      "version": "1.0.0",
+      "sha256": "73d3f1f7b8a78c274919280161eefa36a3486f6b343e27f2bdd055ecf9a1da95",
+      "size": 2087232,
+      "required": true,
+      "fileName": "mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+      "servers": [],
+      "storagePath": "mcw-furniture-3-4-1-mc1-21-1fabric-1.0.0.enc",
+      "iv": "fb+7XIcgxr0w5Dig",
+      "authTag": "eNpC2IJYQgLP5CS+cIOnew==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.045Z"
+    },
+    {
+      "id": "cmv4c00cw000ett3gxyrelh65",
+      "modId": "remnant-bosses-fabric-1-21-1-2-6-2",
+      "version": "1.0.0",
+      "sha256": "4e58f7f9338bffe552d567bb42eef751a199300e592c1b4f60ef369ac39e1359",
+      "size": 3144062,
+      "required": true,
+      "fileName": "remnant_bosses-fabric-1.21.1-2.6.2.jar",
+      "servers": [],
+      "storagePath": "remnant-bosses-fabric-1-21-1-2-6-2-1.0.0.enc",
+      "iv": "+50bzA8TJIOX2cll",
+      "authTag": "S0rj2+Pgm6x6yK7RG9phdQ==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.088Z"
+    },
+    {
+      "id": "cmv4c00d6000ftt3gsrubqc23",
+      "modId": "resourcefulconfig-fabric-1-21-3-0-11",
+      "version": "1.0.0",
+      "sha256": "8c2624ddeda09d00c42095a37281dc502c6dcaffae68a3e08c3ea57fef28425e",
+      "size": 345396,
+      "required": true,
+      "fileName": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+      "servers": [],
+      "storagePath": "resourcefulconfig-fabric-1-21-3-0-11-1.0.0.enc",
+      "iv": "aDGZoxKCd3inG0jV",
+      "authTag": "lgoBjTPbLpJOAl58CvQqOQ==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.099Z"
+    },
+    {
+      "id": "cmv4c00dl000gtt3gxe5se4ks",
+      "modId": "resourcefullib-fabric-1-21-3-0-12",
+      "version": "1.0.0",
+      "sha256": "93064c5aff85bf5e6385470f311fd1c7de172f58b02fefb1d2920db76f8cd8b5",
+      "size": 485586,
+      "required": true,
+      "fileName": "resourcefullib-fabric-1.21-3.0.12.jar",
+      "servers": [],
+      "storagePath": "resourcefullib-fabric-1-21-3-0-12-1.0.0.enc",
+      "iv": "ikUm+aCidz/N1rkg",
+      "authTag": "pU/u4b42hpRrfXNmBJ055g==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.114Z"
+    },
+    {
+      "id": "cmv4c00ed000htt3g4vmt1nfw",
+      "modId": "revivir-fabric-1-21-1-1-0-2",
+      "version": "1.0.0",
+      "sha256": "f7d119d685b4ec663ea2fd3572c7a360753beab798f964b60ede4eb2316b8490",
+      "size": 935210,
+      "required": true,
+      "fileName": "Revivir-Fabric-1.21.1-1.0.2.jar",
+      "servers": [],
+      "storagePath": "revivir-fabric-1-21-1-1-0-2-1.0.0.enc",
+      "iv": "+FZ882fD3RmcCdjY",
+      "authTag": "DMkl2WU/xYbVtopzAvvOTg==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.142Z"
+    },
+    {
+      "id": "cmv4c00f0000itt3giu5u1b4p",
+      "modId": "sodium-fabric-0-8-13-mc1-21-1",
+      "version": "1.0.0",
+      "sha256": "3d43c14985a4deb19c654aad3393b454cf57e1ebcbba86c4ae6a98dfc60eca2d",
+      "size": 1574609,
+      "required": true,
+      "fileName": "sodium-fabric-0.8.13+mc1.21.1.jar",
+      "servers": [],
+      "storagePath": "sodium-fabric-0-8-13-mc1-21-1-1.0.0.enc",
+      "iv": "PToiH/k8ZrCM2Ge/",
+      "authTag": "1fFMMK88L0jDv2063VO4mw==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.164Z"
+    },
+    {
+      "id": "cmv4c00gt000jtt3gezk3urud",
+      "modId": "voicechat-fabric-1-21-1-2-6-22",
+      "version": "1.0.0",
+      "sha256": "972a01592f670aa57f2dc2e3587a656b798106037468c61e4bfb49eba7d6ae36",
+      "size": 5369475,
+      "required": true,
+      "fileName": "voicechat-fabric-1.21.1-2.6.22.jar",
+      "servers": [],
+      "storagePath": "voicechat-fabric-1-21-1-2-6-22-1.0.0.enc",
+      "iv": "WixcdTG6M8L+eZnY",
+      "authTag": "Mp/iIWuR2pSom/H+hPgGPQ==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.229Z"
+    },
+    {
+      "id": "cmv4c00hq000ktt3g7x0imais",
+      "modId": "1-21-1-securitycraft-fabric-v0-6-1",
+      "version": "1.0.0",
+      "sha256": "7ea8a8a37615c5a7eeb95a3db5b0ea71e566f147c7422f1e9898b051bf6375b1",
+      "size": 2267199,
+      "required": true,
+      "fileName": "[1.21.1] SecurityCraft-fabric-V0.6.1.jar",
+      "servers": [],
+      "storagePath": "1-21-1-securitycraft-fabric-v0-6-1-1.0.0.enc",
+      "iv": "3xMmeLX97JED+R04",
+      "authTag": "JcoQ4g8A+YntvneIa3R2gw==",
+      "active": true,
+      "createdAt": "2026-10-11T21:24:43.263Z"
+    },
+    {
+      "id": "cmv4ft80f0000tt9o459jhyi6",
+      "modId": "dedsafio",
+      "version": "1.0.0",
+      "sha256": "34c44245d806757ebb53cdd611013fdfe8af05ea39355b8040f3bb945e2aa8de",
+      "size": 14702,
+      "required": true,
+      "fileName": "dedsafio-guard-1.0.0.jar",
+      "servers": [],
+      "storagePath": "dedsafio-1.0.0.enc",
+      "iv": "97Mrs/vY2fid1QBj",
+      "authTag": "Jnu4qRhG47DDA/rHZVSlhw==",
+      "active": true,
+      "createdAt": "2026-10-11T23:11:24.870Z"
+    }
+  ],
+  "manifest": [
+    {
+      "id": "cmv4c0agg0000ttz8xempv8eu",
+      "version": "m-8d2bdda89bd1",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "loaderVersion": "0.16.5",
+      "serverId": "endersafio",
+      "payload": {
+        "mods": [
+          {
+            "id": "1-21-1-securitycraft-fabric-v0-6-1",
+            "size": 2267199,
+            "sha256": "7ea8a8a37615c5a7eeb95a3db5b0ea71e566f147c7422f1e9898b051bf6375b1",
+            "version": "1.0.0",
+            "fileName": "[1.21.1] SecurityCraft-fabric-V0.6.1.jar",
+            "required": true
+          },
+          {
+            "id": "architectury-13-0-11-fabric",
+            "size": 600921,
+            "sha256": "ab17d5c7d8d8c93cc713437ed426f0ff0d6f802a48fff0c579a9bd3aaa833efd",
+            "version": "1.0.0",
+            "fileName": "architectury-13.0.11-fabric.jar",
+            "required": true
+          },
+          {
+            "id": "conditionsmod-1-0-3",
+            "size": 617386,
+            "sha256": "8106f963905e4a236bfe0037ab514b536c06506d61217565d1e6004a6c1221da",
+            "version": "1.0.0",
+            "fileName": "conditionsmod-1.0.3.jar",
+            "required": true
+          },
+          {
+            "id": "creeperoverhaul-fabric-1-21-1-4-0-6",
+            "size": 1180412,
+            "sha256": "45ea8ca85ea5926484347de7289ceeeff3e79c6f16b4b04f98ffebf2e484b5a6",
+            "version": "1.0.0",
+            "fileName": "CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+            "required": true
+          },
+          {
+            "id": "customplayermodels-fabric-1-21-0-6-27a",
+            "size": 2845602,
+            "sha256": "d6544dfc5b04809a7cc83e2eb71e463bb7be2846a3207a5f0627b47653046a94",
+            "version": "1.0.0",
+            "fileName": "CustomPlayerModels-Fabric-1.21-0.6.27a.jar",
+            "required": true
+          },
+          {
+            "id": "dedsafio4",
+            "size": 167689005,
+            "sha256": "da2054bd440b267ee76b31a0946b6232b891ce75c4d9d33f63c6dd0ae1233a87",
+            "version": "1.0.0",
+            "fileName": "DEDSAFIO4.jar",
+            "required": true
+          },
+          {
+            "id": "fabric-api-0-116-17-1-21-1",
+            "size": 2452735,
+            "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800",
+            "version": "1.0.0",
+            "fileName": "fabric-api-0.116.17+1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-library-fabric-2101-1-37",
+            "size": 1435726,
+            "sha256": "399e62acd6c343dab0780ac34aa0e86b4acaa6861eb5d65e826adb03ce9ec6c1",
+            "version": "1.0.0",
+            "fileName": "ftb-library-fabric-2101.1.37.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-quests-fabric-2101-1-36",
+            "size": 1607225,
+            "sha256": "68df590b681255e11c52d1850d0dd02d3ad9a3c5d82fdb9e37312111a60ddefb",
+            "version": "1.0.0",
+            "fileName": "ftb-quests-fabric-2101.1.36.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-teams-fabric-2101-1-11",
+            "size": 303801,
+            "sha256": "39e34b438e0232a614a8cf1269fcff2705b85fde8b930a03d558bc66a03c7cf6",
+            "version": "1.0.0",
+            "fileName": "ftb-teams-fabric-2101.1.11.jar",
+            "required": true
+          },
+          {
+            "id": "geckolib-fabric-1-21-1-4-9-3",
+            "size": 664463,
+            "sha256": "70186c70660e8de6c58f5b28625f71ae9e80eb0ad81b5d47b62fd5809bef2ee0",
+            "version": "1.0.0",
+            "fileName": "geckolib-fabric-1.21.1-4.9.3.jar",
+            "required": true
+          },
+          {
+            "id": "jauml-fabric-1-21-1-2-3-1",
+            "size": 46799,
+            "sha256": "2693c1cac6ebda97e1650e36646cdc016985e3349412e40c7c12be3a161d1b23",
+            "version": "1.0.0",
+            "fileName": "jauml-fabric-1.21.1-2.3.1.jar",
+            "required": true
+          },
+          {
+            "id": "krypton-0-2-8",
+            "size": 161045,
+            "sha256": "94f195819b24e5da64effdc9da15cdd84836cc75e8ff0fd098bab6bc2f49e3fe",
+            "version": "1.0.0",
+            "fileName": "krypton-0.2.8.jar",
+            "required": true
+          },
+          {
+            "id": "lithium-fabric-0-15-4-mc1-21-1",
+            "size": 797454,
+            "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa",
+            "version": "1.0.0",
+            "fileName": "lithium-fabric-0.15.4+mc1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "mcw-furniture-3-4-1-mc1-21-1fabric",
+            "size": 2087232,
+            "sha256": "73d3f1f7b8a78c274919280161eefa36a3486f6b343e27f2bdd055ecf9a1da95",
+            "version": "1.0.0",
+            "fileName": "mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+            "required": true
+          },
+          {
+            "id": "remnant-bosses-fabric-1-21-1-2-6-2",
+            "size": 3144062,
+            "sha256": "4e58f7f9338bffe552d567bb42eef751a199300e592c1b4f60ef369ac39e1359",
+            "version": "1.0.0",
+            "fileName": "remnant_bosses-fabric-1.21.1-2.6.2.jar",
+            "required": true
+          },
+          {
+            "id": "resourcefulconfig-fabric-1-21-3-0-11",
+            "size": 345396,
+            "sha256": "8c2624ddeda09d00c42095a37281dc502c6dcaffae68a3e08c3ea57fef28425e",
+            "version": "1.0.0",
+            "fileName": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+            "required": true
+          },
+          {
+            "id": "resourcefullib-fabric-1-21-3-0-12",
+            "size": 485586,
+            "sha256": "93064c5aff85bf5e6385470f311fd1c7de172f58b02fefb1d2920db76f8cd8b5",
+            "version": "1.0.0",
+            "fileName": "resourcefullib-fabric-1.21-3.0.12.jar",
+            "required": true
+          },
+          {
+            "id": "revivir-fabric-1-21-1-1-0-2",
+            "size": 935210,
+            "sha256": "f7d119d685b4ec663ea2fd3572c7a360753beab798f964b60ede4eb2316b8490",
+            "version": "1.0.0",
+            "fileName": "Revivir-Fabric-1.21.1-1.0.2.jar",
+            "required": true
+          },
+          {
+            "id": "sodium-fabric-0-8-13-mc1-21-1",
+            "size": 1574609,
+            "sha256": "3d43c14985a4deb19c654aad3393b454cf57e1ebcbba86c4ae6a98dfc60eca2d",
+            "version": "1.0.0",
+            "fileName": "sodium-fabric-0.8.13+mc1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "voicechat-fabric-1-21-1-2-6-22",
+            "size": 5369475,
+            "sha256": "972a01592f670aa57f2dc2e3587a656b798106037468c61e4bfb49eba7d6ae36",
+            "version": "1.0.0",
+            "fileName": "voicechat-fabric-1.21.1-2.6.22.jar",
+            "required": true
+          }
+        ],
+        "loader": "fabric",
+        "version": "m-8d2bdda89bd1",
+        "issuedAt": "2026-10-11T21:24:56.159Z",
+        "protocol": "1",
+        "serverId": "endersafio",
+        "minecraft": "1.21.1",
+        "loaderVersion": "0.16.5"
+      },
+      "signature": "8WJpvCv35Yhj3PZxRNTn06WavJc8Mwf27g4D0HubUF+OqyE4OzzSM8uhcIwO9Ub/9U/h5cLiBNGhP6u/+PcaBw==",
+      "active": false,
+      "createdAt": "2026-10-11T21:24:56.176Z"
+    },
+    {
+      "id": "cmv4ftkge0000tthghqjb23lx",
+      "version": "m-6591d436b24a",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "loaderVersion": "0.16.5",
+      "serverId": "endersafio",
+      "payload": {
+        "mods": [
+          {
+            "id": "1-21-1-securitycraft-fabric-v0-6-1",
+            "size": 2267199,
+            "sha256": "7ea8a8a37615c5a7eeb95a3db5b0ea71e566f147c7422f1e9898b051bf6375b1",
+            "version": "1.0.0",
+            "fileName": "[1.21.1] SecurityCraft-fabric-V0.6.1.jar",
+            "required": true
+          },
+          {
+            "id": "architectury-13-0-11-fabric",
+            "size": 600921,
+            "sha256": "ab17d5c7d8d8c93cc713437ed426f0ff0d6f802a48fff0c579a9bd3aaa833efd",
+            "version": "1.0.0",
+            "fileName": "architectury-13.0.11-fabric.jar",
+            "required": true
+          },
+          {
+            "id": "conditionsmod-1-0-3",
+            "size": 617386,
+            "sha256": "8106f963905e4a236bfe0037ab514b536c06506d61217565d1e6004a6c1221da",
+            "version": "1.0.0",
+            "fileName": "conditionsmod-1.0.3.jar",
+            "required": true
+          },
+          {
+            "id": "creeperoverhaul-fabric-1-21-1-4-0-6",
+            "size": 1180412,
+            "sha256": "45ea8ca85ea5926484347de7289ceeeff3e79c6f16b4b04f98ffebf2e484b5a6",
+            "version": "1.0.0",
+            "fileName": "CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+            "required": true
+          },
+          {
+            "id": "customplayermodels-fabric-1-21-0-6-27a",
+            "size": 2845602,
+            "sha256": "d6544dfc5b04809a7cc83e2eb71e463bb7be2846a3207a5f0627b47653046a94",
+            "version": "1.0.0",
+            "fileName": "CustomPlayerModels-Fabric-1.21-0.6.27a.jar",
+            "required": true
+          },
+          {
+            "id": "dedsafio",
+            "size": 14702,
+            "sha256": "34c44245d806757ebb53cdd611013fdfe8af05ea39355b8040f3bb945e2aa8de",
+            "version": "1.0.0",
+            "fileName": "dedsafio-guard-1.0.0.jar",
+            "required": true
+          },
+          {
+            "id": "dedsafio4",
+            "size": 167689005,
+            "sha256": "da2054bd440b267ee76b31a0946b6232b891ce75c4d9d33f63c6dd0ae1233a87",
+            "version": "1.0.0",
+            "fileName": "DEDSAFIO4.jar",
+            "required": true
+          },
+          {
+            "id": "fabric-api-0-116-17-1-21-1",
+            "size": 2452735,
+            "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800",
+            "version": "1.0.0",
+            "fileName": "fabric-api-0.116.17+1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-library-fabric-2101-1-37",
+            "size": 1435726,
+            "sha256": "399e62acd6c343dab0780ac34aa0e86b4acaa6861eb5d65e826adb03ce9ec6c1",
+            "version": "1.0.0",
+            "fileName": "ftb-library-fabric-2101.1.37.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-quests-fabric-2101-1-36",
+            "size": 1607225,
+            "sha256": "68df590b681255e11c52d1850d0dd02d3ad9a3c5d82fdb9e37312111a60ddefb",
+            "version": "1.0.0",
+            "fileName": "ftb-quests-fabric-2101.1.36.jar",
+            "required": true
+          },
+          {
+            "id": "ftb-teams-fabric-2101-1-11",
+            "size": 303801,
+            "sha256": "39e34b438e0232a614a8cf1269fcff2705b85fde8b930a03d558bc66a03c7cf6",
+            "version": "1.0.0",
+            "fileName": "ftb-teams-fabric-2101.1.11.jar",
+            "required": true
+          },
+          {
+            "id": "geckolib-fabric-1-21-1-4-9-3",
+            "size": 664463,
+            "sha256": "70186c70660e8de6c58f5b28625f71ae9e80eb0ad81b5d47b62fd5809bef2ee0",
+            "version": "1.0.0",
+            "fileName": "geckolib-fabric-1.21.1-4.9.3.jar",
+            "required": true
+          },
+          {
+            "id": "jauml-fabric-1-21-1-2-3-1",
+            "size": 46799,
+            "sha256": "2693c1cac6ebda97e1650e36646cdc016985e3349412e40c7c12be3a161d1b23",
+            "version": "1.0.0",
+            "fileName": "jauml-fabric-1.21.1-2.3.1.jar",
+            "required": true
+          },
+          {
+            "id": "krypton-0-2-8",
+            "size": 161045,
+            "sha256": "94f195819b24e5da64effdc9da15cdd84836cc75e8ff0fd098bab6bc2f49e3fe",
+            "version": "1.0.0",
+            "fileName": "krypton-0.2.8.jar",
+            "required": true
+          },
+          {
+            "id": "lithium-fabric-0-15-4-mc1-21-1",
+            "size": 797454,
+            "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa",
+            "version": "1.0.0",
+            "fileName": "lithium-fabric-0.15.4+mc1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "mcw-furniture-3-4-1-mc1-21-1fabric",
+            "size": 2087232,
+            "sha256": "73d3f1f7b8a78c274919280161eefa36a3486f6b343e27f2bdd055ecf9a1da95",
+            "version": "1.0.0",
+            "fileName": "mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+            "required": true
+          },
+          {
+            "id": "remnant-bosses-fabric-1-21-1-2-6-2",
+            "size": 3144062,
+            "sha256": "4e58f7f9338bffe552d567bb42eef751a199300e592c1b4f60ef369ac39e1359",
+            "version": "1.0.0",
+            "fileName": "remnant_bosses-fabric-1.21.1-2.6.2.jar",
+            "required": true
+          },
+          {
+            "id": "resourcefulconfig-fabric-1-21-3-0-11",
+            "size": 345396,
+            "sha256": "8c2624ddeda09d00c42095a37281dc502c6dcaffae68a3e08c3ea57fef28425e",
+            "version": "1.0.0",
+            "fileName": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+            "required": true
+          },
+          {
+            "id": "resourcefullib-fabric-1-21-3-0-12",
+            "size": 485586,
+            "sha256": "93064c5aff85bf5e6385470f311fd1c7de172f58b02fefb1d2920db76f8cd8b5",
+            "version": "1.0.0",
+            "fileName": "resourcefullib-fabric-1.21-3.0.12.jar",
+            "required": true
+          },
+          {
+            "id": "revivir-fabric-1-21-1-1-0-2",
+            "size": 935210,
+            "sha256": "f7d119d685b4ec663ea2fd3572c7a360753beab798f964b60ede4eb2316b8490",
+            "version": "1.0.0",
+            "fileName": "Revivir-Fabric-1.21.1-1.0.2.jar",
+            "required": true
+          },
+          {
+            "id": "sodium-fabric-0-8-13-mc1-21-1",
+            "size": 1574609,
+            "sha256": "3d43c14985a4deb19c654aad3393b454cf57e1ebcbba86c4ae6a98dfc60eca2d",
+            "version": "1.0.0",
+            "fileName": "sodium-fabric-0.8.13+mc1.21.1.jar",
+            "required": true
+          },
+          {
+            "id": "voicechat-fabric-1-21-1-2-6-22",
+            "size": 5369475,
+            "sha256": "972a01592f670aa57f2dc2e3587a656b798106037468c61e4bfb49eba7d6ae36",
+            "version": "1.0.0",
+            "fileName": "voicechat-fabric-1.21.1-2.6.22.jar",
+            "required": true
+          }
+        ],
+        "loader": "fabric",
+        "version": "m-6591d436b24a",
+        "issuedAt": "2026-10-11T23:11:40.978Z",
+        "protocol": "1",
+        "serverId": "endersafio",
+        "minecraft": "1.21.1",
+        "loaderVersion": "0.16.5"
+      },
+      "signature": "6pfan9FsE9D/9/ua6r2CvSxyAoED9YETEnpjxCtdlteehXY6id0SvSMu/5fHsyF7zPELA3i9ZiTUM8npsh49Bw==",
+      "active": true,
+      "createdAt": "2026-10-11T23:11:41.001Z"
+    }
+  ],
+  "news": []
+}
