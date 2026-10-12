@@ -1,0 +1,78 @@
+# Blueprint de Render para el backend Dedsafio.
+# Despliegue: https://render.com -> New -> Blueprint -> selecciona este repo.
+# Los valores con `sync: false` se rellenan a mano en el panel (secretos).
+services:
+  - type: web
+    name: dedsafio-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+
+      # Base de datos (Neon / Render Postgres). Copia la cadena de conexión.
+      - key: DATABASE_URL
+        sync: false
+
+      # Secretos: los MISMOS que en tu backend/.env local.
+      - key: ACCESS_TOKEN_SECRET
+        sync: false
+      - key: LICENSE_TOKEN_SECRET
+        sync: false
+      - key: DOWNLOAD_URL_SECRET
+        sync: false
+      - key: SIGNING_PRIVATE_KEY_PEM_B64
+        sync: false
+      - key: SIGNING_PUBLIC_KEY_PEM_B64
+        sync: false
+      - key: MOD_MASTER_KEY_B64
+        sync: false
+
+      # Servidor de Minecraft
+      - key: SERVER_ID
+        value: endersafio
+      - key: SERVER_NAME
+        value: EnderSAFIO
+      - key: SERVER_HOST
+        value: s10.mia.us.tarohosting.lat
+      - key: SERVER_PORT
+        value: "33538"
+      - key: MINECRAFT_VERSION
+        value: "1.21.1"
+      - key: FABRIC_LOADER_VERSION
+        value: "0.16.5"
+      - key: REQUIRED_JAVA_MAJOR
+        value: "21"
+
+      # Almacén de artefactos cifrados en Cloudflare R2 (S3-compatible).
+      - key: STORAGE_DRIVER
+        value: s3
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_REGION
+        value: auto
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_PREFIX
+        value: mods
+
+      - key: CORS_ORIGINS
+        value: tauri://localhost
+
+      - key: SEED_ADMIN_USERNAME
+        value: admin
+      - key: SEED_ADMIN_EMAIL
+        value: admin@example.com
+      - key: SEED_ADMIN_PASSWORD
+        sync: false

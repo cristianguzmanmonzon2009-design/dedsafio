@@ -1,0 +1,43 @@
+{
+  "name": "dedsafio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Launcher privado + backend + mods para el servidor Minecraft 1.21.1 (Fabric).",
+  "workspaces": [
+    "shared",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "light-my-request": "6.6.0"
+  },
+  "scripts": {
+    "build:shared": "npm run -w @dedsafio/shared build",
+    "build:backend": "npm run -w @dedsafio/backend build",
+    "build": "npm run build:shared && npm run build:backend",
+    "dev:backend": "npm run build:shared && npm run -w @dedsafio/backend dev",
+    "start:backend": "npm run build:shared && npm run -w @dedsafio/backend start",
+    "test": "npm run build:shared && npm run -w @dedsafio/backend test",
+    "db:generate": "npm run -w @dedsafio/backend db:generate",
+    "db:migrate": "npm run -w @dedsafio/backend db:migrate",
+    "db:deploy": "npm run -w @dedsafio/backend db:deploy",
+    "db:embedded": "npm run build:shared && npx tsx tools/dev-db.ts",
+    "seed": "npm run -w @dedsafio/backend db:seed",
+    "keys:generate": "npm run build:shared && npx tsx tools/generate-keys.ts",
+    "mods:publish": "npm run build:shared && npx tsx tools/publish-mod.ts",
+    "mods:publish-all": "npm run build:shared && npx tsx tools/publish-folder.ts",
+    "mods:manifest": "npm run build:shared && npx tsx tools/publish-manifest.ts",
+    "storage:sync": "npx tsx tools/sync-storage.ts",
+    "launcher:install": "npm --prefix launcher install",
+    "launcher:typecheck": "npm --prefix launcher run typecheck",
+    "launcher:dev": "npm --prefix launcher run tauri:dev",
+    "launcher:build": "npm --prefix launcher run tauri:build"
+  },
+  "devDependencies": {
+    "embedded-postgres": "^16.13.0-beta.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,45 @@
+# Despliegue local/producción del backend Dedsafio.
+# Uso:
+#   docker compose up -d --build
+#   docker compose exec api npx prisma migrate deploy   (ya se ejecuta al arrancar)
+#   docker compose exec api npm run db:seed             (crear admin)
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dedsafio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dedsafio}
+      POSTGRES_DB: dedsafio
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dedsafio"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  api:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://dedsafio:${POSTGRES_PASSWORD:-dedsafio}@db:5432/dedsafio?schema=public
+      HOST: 0.0.0.0
+      PORT: 8080
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./storage:/app/backend/storage
+
+volumes:
+  pgdata:

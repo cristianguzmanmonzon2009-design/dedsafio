@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "dedsafio",
+  "version": "${version}",
+  "name": "Dedsafio Guard",
+  "description": "Valida la licencia del launcher y la integridad de los mods contra el backend de Dedsafio.",
+  "authors": ["Dedsafio"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.dedsafio.mod.DedsafioMod"],
+    "client": ["com.dedsafio.mod.DedsafioClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Prisma
+backend/prisma/*.db
+backend/prisma/*.db-journal
+
+# PostgreSQL embebido (desarrollo local)
+.pgdata/
+
+# Mod storage (encrypted artifacts - never commit)
+backend/storage/
+mods-source/*.jar
+mods-source/*.enc
+
+# Launcher (Tauri / Rust)
+launcher/node_modules/
+launcher/dist/
+launcher/src-tauri/target/
+
+# Mod (Fabric / Gradle)
+mod/.gradle/
+mod/build/
+mod/run/
+mod/.fabric/
+
+# Experimento Forge (no usado)
+forge/
+forge-mdk.zip
+
+# Tooling / IDE
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+Thumbs.db
+desktop.ini

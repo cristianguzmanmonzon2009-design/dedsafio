@@ -1,0 +1,150 @@
+// Esquema de datos del backend Dedsafio.
+// El backend es la autoridad final: usuarios, sesiones, licencias y artefactos.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  user
+  admin
+}
+
+model User {
+  id            String    @id @default(cuid())
+  username      String    @unique
+  email         String    @unique
+  passwordHash  String
+  role          Role      @default(user)
+  accessRevoked Boolean   @default(false)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions     Session[]
+  resets       PasswordReset[]
+  licenses     License[]
+  events       TelemetryEvent[]
+  audits       AuditLog[]
+}
+
+model Session {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshHash String    @unique
+  hardwareId  String?
+  userAgent   String?
+  ip          String?
+  createdAt   DateTime  @default(now())
+  expiresAt   DateTime
+  revokedAt   DateTime?
+  rotatedToId String?
+
+  @@index([userId])
+}
+
+model PasswordReset {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  createdAt DateTime  @default(now())
+  expiresAt DateTime
+  usedAt    DateTime?
+
+  @@index([userId])
+}
+
+model License {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  serverId        String
+  hardwareId      String
+  manifestVersion String
+  createdAt       DateTime  @default(now())
+  expiresAt       DateTime
+  revokedAt       DateTime?
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model ModVersion {
+  id          String   @id @default(cuid())
+  modId       String
+  version     String
+  sha256      String
+  size        Int
+  required    Boolean  @default(true)
+  fileName    String
+  servers     String[] @default([])
+  storagePath String
+  iv          String
+  authTag     String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@unique([modId, version])
+  @@index([modId, active])
+}
+
+model Manifest {
+  id            String   @id @default(cuid())
+  version       String   @unique
+  minecraft     String
+  loader        String
+  loaderVersion String
+  serverId      String
+  payload       Json
+  signature     String
+  active        Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@index([active])
+}
+
+model News {
+  id          String   @id @default(cuid())
+  type        String
+  title       String
+  description String
+  imageUrl    String?
+  active      Boolean  @default(true)
+  publishedAt DateTime @default(now())
+
+  @@index([active])
+}
+
+model TelemetryEvent {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  event      String
+  hardwareId String?
+  metadata   Json?
+  ip         String?
+  createdAt  DateTime @default(now())
+
+  @@index([event])
+  @@index([userId])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  detail    String?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([action])
+  @@index([userId])
+}
