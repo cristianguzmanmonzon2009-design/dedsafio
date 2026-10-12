@@ -196,13 +196,23 @@ pub fn spawn(spec: &LaunchSpec, log_file: &Path) -> AppResult<std::process::Chil
     let stdout = std::fs::File::create(log_file)?;
     let stderr = stdout.try_clone()?;
 
-    let child = std::process::Command::new(spec.java)
-        .args(&args)
+    let mut cmd = std::process::Command::new(spec.java);
+    cmd.args(&args)
         .current_dir(spec.paths.instance())
         .stdout(Stdio::from(stdout))
         .stderr(Stdio::from(stderr))
         .stdin(Stdio::null())
-        .env("APPDATA", spec.paths.root.to_string_lossy().to_string())
+        .env("APPDATA", spec.paths.root.to_string_lossy().to_string());
+
+    // En Windows evita que se abra una consola (ventana tipo cmd) con Java.
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        const CREATE_NO_WINDOW: u32 = 0x0800_0000;
+        cmd.creation_flags(CREATE_NO_WINDOW);
+    }
+
+    let child = cmd
         .spawn()
         .map_err(|e| AppError::msg(format!("No se pudo lanzar el juego: {e}")))?;
 

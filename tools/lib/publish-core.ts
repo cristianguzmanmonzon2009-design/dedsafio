@@ -64,6 +64,7 @@ export async function publishMod(opts: PublishOptions): Promise<PublishResult> {
 
   const encrypted = encryptBuffer(plaintext);
   const storedAs = `${opts.id}-${opts.version}.enc`;
+  const fileName = path.basename(jarPath);
   await storeEncrypted(storedAs, encrypted.ciphertext);
 
   await prisma.modVersion.upsert({
@@ -74,6 +75,7 @@ export async function publishMod(opts: PublishOptions): Promise<PublishResult> {
       sha256,
       size,
       required: opts.required,
+      fileName,
       servers: opts.servers,
       storagePath: storedAs,
       iv: encrypted.iv,
@@ -83,6 +85,7 @@ export async function publishMod(opts: PublishOptions): Promise<PublishResult> {
       sha256,
       size,
       required: opts.required,
+      fileName,
       servers: opts.servers,
       storagePath: storedAs,
       iv: encrypted.iv,

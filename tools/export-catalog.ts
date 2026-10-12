@@ -1,3 +1,4 @@
+import "./_env.js";
 /**
  * Exporta el catálogo de datos (ModVersion, Manifest, News) de la base local a
  * `backend/prisma/catalog.json`. El contenedor importa ese JSON al arrancar si

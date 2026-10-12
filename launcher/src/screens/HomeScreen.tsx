@@ -56,7 +56,6 @@ export default function HomeScreen() {
           <div className="ver">
             {config?.minecraft} · Fabric {config?.loaderVersion}
           </div>
-          <div className="ver">{config?.authorizedAddress}</div>
         </div>
 
         <div className="menu-buttons">

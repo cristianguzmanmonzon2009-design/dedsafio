@@ -8,13 +8,8 @@ import { env } from "../src/env.js";
 const prisma = new PrismaClient();
 const here = path.dirname(fileURLToPath(import.meta.url));
 
-/** Importa el catálogo (mods/manifiestos) si la base aún no tiene mods. */
+/** Sincroniza el catálogo (mods/manifiestos) desde catalog.json en cada arranque. */
 async function importCatalog(): Promise<void> {
-  const count = await prisma.modVersion.count();
-  if (count > 0) {
-    console.log(`Catálogo ya presente (${count} versiones de mod).`);
-    return;
-  }
   const file = path.join(here, "catalog.json");
   try {
     await fs.access(file);
@@ -23,16 +18,22 @@ async function importCatalog(): Promise<void> {
     return;
   }
   const data = JSON.parse(await fs.readFile(file, "utf8")) as {
-    mods?: unknown[];
+    mods?: Array<Record<string, unknown> & { modId: string; version: string }>;
     manifest?: unknown[];
     news?: unknown[];
   };
-  if (data.mods?.length) {
-    await prisma.modVersion.createMany({
-      data: data.mods as never,
-      skipDuplicates: true,
+
+  let synced = 0;
+  for (const mod of data.mods ?? []) {
+    const { id: _id, createdAt: _createdAt, ...rest } = mod;
+    await prisma.modVersion.upsert({
+      where: { modId_version: { modId: mod.modId, version: mod.version } },
+      create: mod as never,
+      update: rest as never,
     });
+    synced++;
   }
+
   if (data.manifest?.length) {
     await prisma.manifest.createMany({
       data: data.manifest as never,
@@ -46,7 +47,7 @@ async function importCatalog(): Promise<void> {
     });
   }
   console.log(
-    `Catálogo importado: mods=${data.mods?.length ?? 0} manifest=${data.manifest?.length ?? 0}`,
+    `Catálogo sincronizado: mods=${synced} manifest=${data.manifest?.length ?? 0}`,
   );
 }
 

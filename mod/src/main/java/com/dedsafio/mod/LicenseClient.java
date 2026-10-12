@@ -33,7 +33,7 @@ public final class LicenseClient {
         if (env != null && !env.isBlank()) {
             return env;
         }
-        return "http://localhost:8080";
+        return "https://dedsafio-backend-ucvk.onrender.com";
     }
 
     public record Result(boolean valid, String reason) {
