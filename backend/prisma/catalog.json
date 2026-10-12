@@ -316,21 +316,6 @@
       "createdAt": "2026-10-11T21:24:43.263Z"
     },
     {
-      "id": "cmv4ft80f0000tt9o459jhyi6",
-      "modId": "dedsafio",
-      "version": "1.0.0",
-      "sha256": "34c44245d806757ebb53cdd611013fdfe8af05ea39355b8040f3bb945e2aa8de",
-      "size": 14702,
-      "required": true,
-      "fileName": "dedsafio-guard-1.0.0.jar",
-      "servers": [],
-      "storagePath": "dedsafio-1.0.0.enc",
-      "iv": "97Mrs/vY2fid1QBj",
-      "authTag": "Jnu4qRhG47DDA/rHZVSlhw==",
-      "active": true,
-      "createdAt": "2026-10-11T23:11:24.870Z"
-    },
-    {
       "id": "cmv4nzh6d0000ttws4zey2n7b",
       "modId": "journeymap-fabric-1-21-1-6-0-9",
       "version": "1.0.0",
@@ -389,6 +374,21 @@
       "authTag": "yKiijZpEbErDO+SK2bnYGQ==",
       "active": true,
       "createdAt": "2026-10-12T03:00:13.817Z"
+    },
+    {
+      "id": "cmv4ft80f0000tt9o459jhyi6",
+      "modId": "dedsafio",
+      "version": "1.0.0",
+      "sha256": "ba460466727df8a22b043767c38cec576a302082a88859c3274030ee1003c60e",
+      "size": 14709,
+      "required": true,
+      "fileName": "dedsafio-guard-1.0.0.jar",
+      "servers": [],
+      "storagePath": "dedsafio-1.0.0.enc",
+      "iv": "U6spxbNcdt16wOta",
+      "authTag": "t82R55JpnyECvkFMHkAijg==",
+      "active": true,
+      "createdAt": "2026-10-11T23:11:24.870Z"
     }
   ],
   "manifest": [
