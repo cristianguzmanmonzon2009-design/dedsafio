@@ -48,8 +48,11 @@ const envSchema = z.object({
   MOD_STORAGE_DIR: z.string().default("./storage"),
   MODS_SOURCE_DIR: z.string().default("../mods-source"),
 
-  // Almacenamiento de artefactos cifrados: "local" (disco) o "s3" (S3/Cloudflare R2).
-  STORAGE_DRIVER: z.enum(["local", "s3"]).default("local"),
+  // Almacenamiento de artefactos cifrados: "local", "s3" (R2/S3) o "http"
+  // (cualquier host estático, p. ej. assets de un GitHub Release).
+  STORAGE_DRIVER: z.enum(["local", "s3", "http"]).default("local"),
+  // Base URL para el driver "http": se pide a `${MODS_BASE_URL}/<storagePath>`.
+  MODS_BASE_URL: z.string().optional().default(""),
   S3_ENDPOINT: z.string().optional().default(""),
   S3_REGION: z.string().optional().default("auto"),
   S3_BUCKET: z.string().optional().default(""),

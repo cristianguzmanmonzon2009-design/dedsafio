@@ -1,6 +1,6 @@
 import { createReadStream } from "node:fs";
 import path from "node:path";
-import { type Readable } from "node:stream";
+import { Readable } from "node:stream";
 import {
   GetObjectCommand,
   PutObjectCommand,
@@ -18,6 +18,10 @@ import { ApiError } from "./errors.js";
 
 export function isS3(): boolean {
   return env.STORAGE_DRIVER === "s3";
+}
+
+export function isHttp(): boolean {
+  return env.STORAGE_DRIVER === "http";
 }
 
 let client: S3Client | null = null;
@@ -56,7 +60,7 @@ export function resolveLocalPath(storagePath: string): string {
   return resolved;
 }
 
-/** Devuelve un stream del artefacto CIFRADO desde S3 o desde disco. */
+/** Devuelve un stream del artefacto CIFRADO desde S3, HTTP o disco. */
 export async function openEncryptedStream(
   storagePath: string,
 ): Promise<Readable> {
@@ -72,10 +76,23 @@ export async function openEncryptedStream(
     }
     return res.Body as Readable;
   }
+  if (isHttp()) {
+    if (!env.MODS_BASE_URL) {
+      throw new Error("Falta MODS_BASE_URL para el driver de almacenamiento http");
+    }
+    const base = env.MODS_BASE_URL.replace(/\/+$/, "");
+    const res = await fetch(`${base}/${storagePath}`);
+    if (!res.ok || !res.body) {
+      throw ApiError.internal(
+        `No se pudo obtener el artefacto (${res.status})`,
+      );
+    }
+    return Readable.fromWeb(res.body as import("node:stream/web").ReadableStream);
+  }
   return createReadStream(resolveLocalPath(storagePath));
 }
 
-/** Sube un artefacto CIFRADO a S3 (no-op en driver local). */
+/** Sube un artefacto CIFRADO a S3 (no-op en driver local/http). */
 export async function putEncryptedObject(
   storagePath: string,
   body: Buffer,
