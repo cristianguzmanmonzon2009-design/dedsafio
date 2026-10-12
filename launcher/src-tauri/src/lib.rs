@@ -14,7 +14,7 @@ pub type SharedState = Arc<AppState>;
 
 /// URL del backend embebida por defecto. Cámbiala por tu dominio público
 /// (https://api.tudominio.com) antes de generar el instalador.
-const DEFAULT_API_URL: &str = "http://localhost:8080";
+const DEFAULT_API_URL: &str = "https://dedsafio-backend-ucvk.onrender.com";
 
 /// Prioridad: variable de entorno DEDSAFIO_API_URL > archivo `api-url.txt`
 /// junto al ejecutable > valor embebido por defecto.
